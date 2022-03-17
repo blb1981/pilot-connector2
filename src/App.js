@@ -14,7 +14,7 @@ import PublicRoute from './PublicRoute'
 import ForgotPassword from './ForgotPassword'
 import Dashboard from './Dashboard'
 import DashboardLayout from './DashboardLayout'
-import JobFeed from './JobFeed'
+import JobFeed from './features/jobs/JobFeed'
 
 function App() {
   return (
