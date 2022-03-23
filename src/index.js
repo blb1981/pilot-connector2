@@ -5,7 +5,8 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import store from './store'
 import { Provider } from 'react-redux'
-// #2a7096 - theme color
+// #2a7096 - primary color
+// #fdd835 - secondary color
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
@@ -14,6 +15,9 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#2a7096',
+    },
+    secondary: {
+      main: '#fdd835',
     },
   },
 })

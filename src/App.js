@@ -4,6 +4,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom'
+import { CssBaseline } from '@mui/material'
 
 import ProtectedRoute from './ProtectedRoute'
 import Login from './Login'
@@ -15,11 +16,13 @@ import ForgotPassword from './ForgotPassword'
 import Dashboard from './Dashboard'
 import DashboardLayout from './DashboardLayout'
 import JobFeed from './features/jobs/JobFeed'
+import AddJob from './features/jobs/AddJob'
 
 function App() {
   return (
     //prettier-ignore
     <div>
+      <CssBaseline />
       <Router>
         <Switch>
           <Route exact path="/"><Redirect to="/jobs" /></Route>
@@ -28,6 +31,7 @@ function App() {
           <PublicRoute path="/register" component={Register} layout={AuthLayout} />
           <PublicRoute path="/forgot-password" component={ForgotPassword} layout={AuthLayout} />
           <ProtectedRoute path="/dashboard" component={Dashboard} layout={DashboardLayout} />
+          <ProtectedRoute path="/add-job" component={AddJob} layout={DashboardLayout} />
           <Route> <NotFound /> </Route>
         </Switch>
       </Router>
