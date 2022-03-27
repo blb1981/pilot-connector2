@@ -1,0 +1,37 @@
+###### GET ALL ######
+GET http://localhost:5000/api/jobs
+
+###### CREATE ######
+POST http://localhost:5000/api/jobs
+Content-Type: application/json
+
+{
+	"headline": "Indy to New York",
+	"description": "Aliquam facere numquam doloribus, vel maxime nesciunt optio, quisquam, in officiis excepturi aliquid vitae doloremque ipsam ut alias incidunt animi ducimus dolor consectetur! Eveniet beatae consequuntur itaque temporibus odio a totam nobis dicta accusantium! Tempora recusandae sit sapiente voluptas nihil, minus enim porro adipisci illum quas?",
+	"startDate": "2022-03-30",
+	"UserId": 56
+}
+
+###### GET ONE ######
+GET  http://localhost:5000/api/jobs/359
+
+###### UPDATE ######
+PATCH http://localhost:5000/api/jobs/359
+Content-Type: application/json
+
+{
+	"headline": "Super early morning test",
+	"description": "This post has been updated...again"
+}
+
+###### SOFT DELETE ######
+DELETE  http://localhost:5000/api/jobs/3
+
+###### HARD DELETE ######
+DELETE http://localhost:5000/api/jobs/1/hard
+
+###### GET ALL INCLUDING SOFT DELETED ######
+GET http://localhost:5000/api/jobs/all
+
+###### GET ALL WITH PARAMS ######
+GET http://localhost:5000/api/jobs?limit=10

@@ -1,59 +1,65 @@
 {
-  "name": "pilot-connector2",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@date-io/date-fns": "^2.13.1",
-    "@date-io/moment": "^2.13.1",
-    "@emotion/react": "^11.8.2",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.5.1",
-    "@mui/lab": "*",
-    "@mui/material": "^5.5.1",
-    "@mui/system": "^5.5.1",
-    "@reduxjs/toolkit": "^1.8.0",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.26.1",
-    "formik": "^2.2.9",
-    "moment": "^2.29.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.4",
-    "yup": "^0.32.11"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "mock": "json-server --watch backend/db.json --port 5000"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@faker-js/faker": "^6.0.0",
-    "faker": "^6.6.6",
-    "json-server": "^0.17.0"
-  }
+	"name": "pilot-connector2",
+	"version": "0.1.0",
+	"private": true,
+	"dependencies": {
+		"@date-io/date-fns": "^2.13.1",
+		"@date-io/moment": "^2.13.1",
+		"@emotion/react": "^11.8.2",
+		"@emotion/styled": "^11.8.1",
+		"@mui/icons-material": "^5.5.1",
+		"@mui/lab": "*",
+		"@mui/material": "^5.5.1",
+		"@mui/system": "^5.5.1",
+		"@reduxjs/toolkit": "^1.8.0",
+		"@testing-library/jest-dom": "^5.16.2",
+		"@testing-library/react": "^12.1.4",
+		"@testing-library/user-event": "^13.5.0",
+		"axios": "^0.26.1",
+		"dotenv": "^10.0.0",
+		"express": "^4.17.3",
+		"formik": "^2.2.9",
+		"moment": "^2.29.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-redux": "^7.2.6",
+		"react-router-dom": "^5.3.0",
+		"react-scripts": "5.0.0",
+		"sequelize": "^6.17.0",
+		"sqlite3": "^5.0.2",
+		"web-vitals": "^2.1.4",
+		"yup": "^0.32.11"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"start:server": "nodemon backend/server.js",
+		"faker": "node backend/models/_faker.js"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@faker-js/faker": "^6.0.0",
+		"faker": "^6.6.6",
+		"json-server": "^0.17.0",
+		"nodemon": "^2.0.15"
+	}
 }
