@@ -14,14 +14,14 @@ Content-Type: application/json
 }
 
 ###### GET ONE ######
-GET  http://localhost:5000/api/users/2
+GET  http://localhost:5000/api/users/5
 
 ###### UPDATE ######
 PATCH http://localhost:5000/api/users/2
 Content-Type: application/json
 
 {
-	"companyContact": "Jimbob",
+	"companyContact": "Updated User",
   "companyName": "ABC Corp",
   "contactMethod": "phone",
   "email": "f@rt.com"
@@ -37,4 +37,4 @@ DELETE http://localhost:5000/api/users/1/hard
 GET http://localhost:5000/api/users/all
 
 ###### GET ALL WITH PARAMS ######
-GET http://localhost:5000/api/users?orderBy=headline&order=DESC
+GET http://localhost:5000/api/users?search=clovis
