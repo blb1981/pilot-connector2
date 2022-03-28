@@ -4,7 +4,7 @@ const router = express.Router()
 const usersController = require('../controllers/users')
 
 // Hard delete
-router.delete('/:id/hard')
+router.delete('/:id/hard', usersController.deleteHard)
 
 // Get all including soft deleted
 router.get('/all', usersController.getAllSoft)

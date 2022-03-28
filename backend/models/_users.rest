@@ -6,7 +6,7 @@ POST http://localhost:5000/api/users
 Content-Type: application/json
 
 {
-	"companyContact": "Phil Smith",
+	"companyContact": "Jimbob",
   "companyName": "ABC Corp",
   "contactMethod": "phone",
   "email": "f@t.com",
@@ -14,7 +14,7 @@ Content-Type: application/json
 }
 
 ###### GET ONE ######
-GET  http://localhost:5000/api/users/5
+GET  http://localhost:5000/api/users/104
 
 ###### UPDATE ######
 PATCH http://localhost:5000/api/users/2
@@ -28,13 +28,13 @@ Content-Type: application/json
 }
 
 ###### SOFT DELETE ######
-DELETE  http://localhost:5000/api/users/2
+DELETE  http://localhost:5000/api/users/101
 
 ###### HARD DELETE ######
-DELETE http://localhost:5000/api/users/1/hard
+DELETE http://localhost:5000/api/users/101/hard
 
 ###### GET ALL INCLUDING SOFT DELETED ######
 GET http://localhost:5000/api/users/all
 
 ###### GET ALL WITH PARAMS ######
-GET http://localhost:5000/api/users?search=clovis
+GET http://localhost:5000/api/users?search=f@t

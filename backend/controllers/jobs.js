@@ -18,13 +18,13 @@ exports.getAllSoft = async (req, res) => {
 // Get all
 /*
     Documentation on search queries
-    Allowed parameters - orderBy, order, offset, limit, search
+    Allowed parameters - sortBy, order, offset, limit, search
 */
 
 exports.getAll = async (req, res) => {
   // Destructure query parameters, set default values
   const {
-    orderBy = 'id',
+    sortBy = 'id',
     order = 'ASC',
     offset = 0,
     limit,
@@ -40,7 +40,7 @@ exports.getAll = async (req, res) => {
           description: { [Op.substring]: search },
         },
       },
-      order: [[orderBy, order]],
+      order: [[sortBy, order]],
       limit,
       offset,
     })
