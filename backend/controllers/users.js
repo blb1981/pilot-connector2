@@ -15,11 +15,10 @@ exports.getAllSoft = async (req, res) => {
 	await modelFactory.getAllSoft(User, req, res, 'User')
 }
 
-// Get all
-/*
-    Documentation on search queries
-    Allowed parameters - sortBy, order, offset, limit, search
-*/
+// Get total job count
+exports.getCount = async (req, res) => {
+	await modelFactory.getCount(User, req, res, 'User')
+}
 
 exports.getAll = async (req, res) => {
 	// Destructure query parameters, set default values

@@ -1,6 +1,7 @@
 const { Op } = require('sequelize')
 
 const Job = require('../models/Job')
+const User = require('../models/User')
 const modelFactory = require('../utils/modelFactory')
 const apiResponse = require('../utils/apiResponse')
 const errorResponse = require('../utils/errorResponse')
@@ -15,11 +16,10 @@ exports.getAllSoft = async (req, res) => {
   await modelFactory.getAllSoft(Job, req, res, 'Job')
 }
 
-// Get all
-/*
-    Documentation on search queries
-    Allowed parameters - sortBy, order, offset, limit, search
-*/
+// Get total job count
+exports.getCount = async (req, res) => {
+  await modelFactory.getCount(Job, req, res, 'Job')
+}
 
 exports.getAll = async (req, res) => {
   // Destructure query parameters, set default values
@@ -33,7 +33,7 @@ exports.getAll = async (req, res) => {
 
   try {
     // Find all, allow text search through headlines and descriptions
-    const jobs = await Job.findAll({
+    const jobs = await Job.findAndCountAll({
       where: {
         [Op.or]: {
           headline: { [Op.substring]: search },
@@ -43,6 +43,7 @@ exports.getAll = async (req, res) => {
       order: [[sortBy, order]],
       limit,
       offset,
+      include: User,
     })
 
     apiResponse(res, 200, 'List of all jobs', {

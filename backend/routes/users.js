@@ -9,25 +9,28 @@ router.delete('/:id/hard', usersController.deleteHard)
 // Get all including soft deleted
 router.get('/all', usersController.getAllSoft)
 
-router
-  .route('/')
-
-  // Get all
-  .get(usersController.getAll)
-
-  // Create
-  .post(usersController.createOne)
+// Get total user count
+router.get('/count', usersController.getCount)
 
 router
-  .route('/:id')
+	.route('/')
 
-  // Get single
-  .get(usersController.getOne)
+	// Get all
+	.get(usersController.getAll)
 
-  // Update single
-  .patch(usersController.updateOne)
+	// Create
+	.post(usersController.createOne)
 
-  // Soft delete
-  .delete(usersController.deleteOne)
+router
+	.route('/:id')
+
+	// Get single
+	.get(usersController.getOne)
+
+	// Update single
+	.patch(usersController.updateOne)
+
+	// Soft delete
+	.delete(usersController.deleteOne)
 
 module.exports = router

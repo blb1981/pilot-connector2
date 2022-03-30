@@ -35,3 +35,6 @@ GET http://localhost:5000/api/jobs/all
 
 ###### GET ALL WITH PARAMS ######
 GET http://localhost:5000/api/jobs?limit=10
+
+###### GET COUNT ######
+GET http://localhost:5000/api/jobs/count

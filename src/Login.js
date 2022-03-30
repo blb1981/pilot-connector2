@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { TextField, Button, Typography } from '@mui/material'
 
 import { login } from './features/auth/authSlice'
-import MySpinner from './MySpinner'
+// import MySpinner from './MySpinner'
 
 const Login = () => {
   const dispatch = useDispatch()

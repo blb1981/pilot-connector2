@@ -38,3 +38,6 @@ GET http://localhost:5000/api/users/all
 
 ###### GET ALL WITH PARAMS ######
 GET http://localhost:5000/api/users?search=f@t
+
+###### GET COUNT ######
+GET http://localhost:5000/api/users/count
