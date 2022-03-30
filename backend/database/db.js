@@ -5,10 +5,11 @@ const { Sequelize, QueryInterface, DataTypes } = require('sequelize')
 //   logging: console.log,
 // })
 const sequelize = new Sequelize({
-  dialect: 'mysql',
-  database: 'pc',
-  username: 'pc',
-  password: 'password',
+  username: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  host: process.env.DB_HOST,
+  dialect: process.env.DB_DIALECT,
   logging: console.log,
 })
 
