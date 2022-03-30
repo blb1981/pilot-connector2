@@ -13,14 +13,14 @@ const apiResponse = require('./utils/apiResponse')
 
 const connect = async () => {
   try {
-    await sequelize.sync()
+    await sequelize.sync({ force: true })
     console.log('Database connected')
   } catch (error) {
     console.log('Unable to connect to the database')
     console.log(error)
   }
 }
-// connect()
+connect()
 
 app.use(cors())
 app.use(express.json())
