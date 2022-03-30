@@ -24,6 +24,7 @@ Job.init(
     timestamps: true,
     modelName: 'Job',
     paranoid: true,
+    tableName: 'jobs',
   }
 )
 

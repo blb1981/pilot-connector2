@@ -4,23 +4,22 @@ const cors = require('cors')
 const path = require('path')
 
 const sequelize = require('./database/db')
+const sync = async () => {
+  try {
+    await sequelize.sync()
+    console.log('Database connected')
+  } catch (error) {
+    console.log('Unable to connect to the database')
+    console.log(error)
+  }
+}
+sync()
 
 const userRoutes = require('./routes/users')
 const jobRoutes = require('./routes/jobs')
 const authRoutes = require('./routes/auth')
 
 const apiResponse = require('./utils/apiResponse')
-
-// const connect = async () => {
-//   try {
-//     await sequelize.sync({ force: true })
-//     console.log('Database connected')
-//   } catch (error) {
-//     console.log('Unable to connect to the database')
-//     console.log(error)
-//   }
-// }
-// connect()
 
 app.use(cors())
 app.use(express.json())

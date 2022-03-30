@@ -44,7 +44,8 @@
 		"start:server": "nodemon backend/server.js",
 		"faker": "node backend/models/_faker.js",
 		"db:migrate": "cd backend && npx sequelize-cli db:migrate",
-		"db:migrate:undo:all": "cd backend && npx sequelize-cli db:migrate:undo:all"
+		"db:migrate:undo:all": "cd backend && npx sequelize-cli db:migrate:undo:all",
+		"sync": "node backend/database/sync.js"
 	},
 	"eslintConfig": {
 		"extends": [

@@ -69,6 +69,7 @@ User.init(
     timestamps: true,
     modelName: 'User',
     paranoid: true,
+    tableName: 'users',
     defaultScope: {
       attributes: {
         exclude: ['password, refreshToken'],
