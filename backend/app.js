@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
+const path = require('path')
 
 const sequelize = require('./database/db')
 
@@ -19,7 +20,7 @@ const connect = async () => {
     console.log(error)
   }
 }
-connect()
+// connect()
 
 app.use(cors())
 app.use(express.json())
@@ -27,6 +28,8 @@ app.use(express.json())
 app.use('/api/users', userRoutes)
 app.use('/api/jobs', jobRoutes)
 app.use('/api/auth', authRoutes)
+
+app.use('/', express.static(path.join(__dirname, '../', 'build')))
 
 app.get('/api', (req, res) => {
   apiResponse(res, 200, 'API is working', null)
